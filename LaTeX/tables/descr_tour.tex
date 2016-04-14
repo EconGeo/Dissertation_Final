@@ -1,0 +1,60 @@
+% Requires LaTeX packages: dcolumn 
+%{@{\extracolsep{5pt}}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+	\begin{tabu} to \linewidth {l*{5}{d{-2}}} % {lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
+		\\[-1.8ex]\hline 
+		\hline \\[-1.8ex] 
+		Statistic & \multicolumn{1}{l}{Tours} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\ 
+		\hline \\[-1.8ex] 
+Tour distance & 5,123 & 10.82 & 12.27 & 0.01 & 135.42 \\ 
+Tour duration (min) & 5,123 & 49.94 & 37.06 & 2 & 452 \\ 
+Tour crosses highway & 5,123 & 0.75 & 0.44 & 0 & 1 \\ 
+Departure hour & 5,123 & 11.21 & 4.26 & 0 & 23 \\ 
+Tour time, auto & 5,123 & 44.98 & 34.96 & 0.09 & 452.00 \\ 
+Tour time, bike & 5,123 & 63.87 & 38.22 & 0.20 & 406.25 \\ 
+Tour time, transit & 5,123 & 65.46 & 37.75 & 0.19 & 232.00 \\ 
+Tour time, walk & 5,123 & 168.01 & 180.11 & 0.56 & 2,031.23 \\ 
+Work stops & 5,123 & 0.57 & 1.10 & 0 & 30 \\ 
+Shopping stops & 5,123 & 0.71 & 0.98 & 0 & 10 \\ 
+Healthcare stops & 5,123 & 0.07 & 0.26 & 0 & 3 \\ 
+Social stops & 5,123 & 0.25 & 0.50 & 0 & 4 \\  
+	\hline \\[-1.8ex] 
+	
+	 
+	
+	\multicolumn{6}{l}{Urban} \\
+	\hline \\[-1.8ex] 
+Tour distance & 887 & 9.30 & 11.60 & 0.01 & 77.63 \\ 
+Tour duration (min) & 887 & 51.50 & 35.76 & 2 & 232 \\ 
+Tour crosses highway & 887 & 0.78 & 0.42 & 0 & 1 \\ 
+Departure hour & 887 & 11.32 & 4.24 & 4 & 23 \\ 
+Tour time, auto & 887 & 40.57 & 32.06 & 0.09 & 190.00 \\ 
+Tour time, bike & 887 & 56.11 & 37.61 & 0.20 & 232.88 \\ 
+Tour time, transit & 887 & 59.48 & 40.14 & 0.19 & 232.00 \\ 
+Tour time, walk & 887 & 147.60 & 169.13 & 0.56 & 1,164.38 \\ 
+Work stops & 887 & 0.56 & 0.84 & 0 & 6 \\ 
+Shopping stops & 887 & 0.71 & 0.93 & 0 & 6 \\ 
+Healthcare stops & 887 & 0.06 & 0.27 & 0 & 3 \\ 
+Social stops & 887 & 0.25 & 0.49 & 0 & 4 \\ 
+
+	
+		\hline \\[-1.8ex] 
+		
+		\multicolumn{6}{l}{Suburban} \\
+		\hline \\[-1.8ex]
+	Tour distance & 4,236 & 11.13 & 12.38 & 0.03 & 135.42 \\ 
+	Tour duration (min) & 4,236 & 49.61 & 37.32 & 2 & 452 \\ 
+	Tour crosses highway & 4,236 & 0.74 & 0.44 & 0 & 1 \\ 
+	Departure hour & 4,236 & 11.18 & 4.26 & 0 & 23 \\ 
+	Tour time, auto & 4,236 & 45.90 & 35.47 & 0.18 & 452.00 \\ 
+	Tour time, bike & 4,236 & 65.50 & 38.15 & 0.40 & 406.25 \\ 
+	Tour time, transit & 4,236 & 66.71 & 37.11 & 0.39 & 215.00 \\ 
+	Tour time, walk & 4,236 & 172.29 & 182.06 & 2.00 & 2,031.23 \\ 
+	Work stops & 4,236 & 0.57 & 1.14 & 0 & 30 \\ 
+	Shopping stops & 4,236 & 0.71 & 1.00 & 0 & 10 \\ 
+	Healthcare stops & 4,236 & 0.07 & 0.26 & 0 & 2 \\ 
+	Social stops & 4,236 & 0.25 & 0.51 & 0 & 4 \\ 
+	 \hline \\[-1.8ex]
+	
+	\end{tabu} 
+

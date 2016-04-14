@@ -1,0 +1,26 @@
+% Requires LaTeX packages: dcolumn 
+%{@{\extracolsep{5pt}}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+	\begin{tabu} to \linewidth {l*{5}{d{-2}}} % {lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
+		\\[-1.8ex]\hline 
+		\hline \\[-1.8ex] 
+		Statistic & \multicolumn{1}{c}{Households} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\ 
+		\hline \\[-1.8ex] 
+HH vehicles & 595 & 1.5 & 0.9 & 0 & 6 \\ 
+Drivers license & 595 & 0.9 & 0.3 & 0 & 1 \\ 
+Transit pass & 595 & 0.2 & 0.4 & 0 & 1 \\ 
+HH bicycles & 595 & 1.4 & 1.5 & 0 & 8 \\ 
+Miles bike lanes within 1 mile & 595 & 20.2 & 5.7 & 10.7 & 33.0 \\ 
+Miles of bus routes within 0.5 miles & 595 & 23.4 & 22.3 & 2.8 & 90.3 \\ 
+Miles of rail lines within 1 mile & 595 & 4.3 & 4.1 & 0.0 & 14.3 \\ 
+Intersections within 1/2 mile & 595 & 138.6 & 17.3 & 95 & 178 \\ 
+HH size & 595 & 2.0 & 1.0 & 1 & 6 \\ 
+Male & 595 & 0.5 & 0.5 & 0 & 1 \\ 
+Age & 595 & 51.6 & 15.4 & 16 & 88 \\ 
+Income & 595 & 72.1 & 50.7 & 0.0 & 160.0 \\ 
+Employed & 595 & 0.7 & 0.5 & 0 & 1 \\ 
+CBG population/sq. mile & 595 & 12,376.0 & 7,176.0 & 642.3 & 33,612.0 \\ 
+CBG jobs/sq. mile & 595 & 16,811.9 & 43,340.4 & 0.0 & 278,470.5 \\ 
+	\hline \\[-1.8ex] 
+	\end{tabu} 
+

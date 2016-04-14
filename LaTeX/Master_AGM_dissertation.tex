@@ -1,0 +1,89 @@
+\documentclass{csuthesis}
+%\documentclass{amsbook}
+\author{Andrew G. Mueller}
+\title{Land Use Restrictions and Household Transportation Choice}
+%\departmentname{Department of Economics}
+%\gradterm{Spring}
+%\advisor{Martin Shields}
+%\coadvisor{Stephan Weiler}
+%\committee{David Mushinski \and Steven Leisz}
+
+% % INSET ADDITIONAL PACKAGES TO USE HERE
+
+\usepackage{float}
+\usepackage{dcolumn}
+\usepackage{longtable}
+\usepackage{tabulary}
+\usepackage{tabu}
+\usepackage{tabularx}
+\usepackage{microtype}
+\usepackage{todonotes}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{setspace}
+\usepackage[toc,page]{appendix}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx
+	,natbib,dcolumn,longtable
+	,tabulary,tabu,tabularx,microtype,todonotes,kpfonts,setspace
+	,afterpage,pdflscape,siunitx,placeins,float,caption}
+\captionsetup{skip=0pt}
+%\declarefloatfont{tiny}{\tiny}% "scriptsize" is defined by floatrow, "tiny" not
+%\floatsetup[table]{font=tiny}
+\usepackage[font=normalsize]{caption}     %% make caption in normal size
+\captionsetup{skip=0pt}
+\setlength{\intextsep}{5pt plus 1.0pt minus 2.0pt}
+\setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt}
+
+
+% % % %
+\usepackage[font=normalsize]{caption}  
+%\usepackage{showkeys}[implicit=false]   %% make caption in normal size
+\usepackage{hyperref}
+% % END OF EXTRA PACKAGES
+
+% % GLOBAL dcolumn types
+%\newcolumntype{d}{D{.}{.}{2.5}}
+%\newcolumntype{s}{D{.}{.}{1.2}}
+
+% % BEGIN DOCUMENT
+
+\begin{document}
+%\frontmatter
+%\begin{abstract}
+%\input{chapters/abstract}
+%\end{abstract}	
+%	\begin{acknowledgements}
+%		\input{chapters/acknowledgements}
+%	\end{acknowledgements}	
+	%	\maketitle
+	%	\tableofcontents
+	%	\listoftables 
+	%	\listoffigures 
+
+% % END OF FRONT MATTER		
+		
+\mainmatter
+		
+% % START OF THE REAL MATERIAL	
+	
+%	\chapter{Introduction}
+%	\input{chapters/mueller_zoning_transportation}
+	%\chapter{Multinomial Logit estimation of Travel Mode Choice and Built Environment Characteristics}
+\chapter{Spatial Models of Travel Behavior and Land Use Restriction}
+
+\input{chapters/chapter2_spatial}
+
+%\chapter{Implications of Zoning and Built Environment Characteristics on Travel Mode Choice}
+%	\input{chapters/chapter3}
+%	\backmatter
+	\bibliographystyle{apalike}
+	\bibliography{bibtex/library}
+	
+%	\appendix
+%	\input{chapters/appendixA}
+\end{document}

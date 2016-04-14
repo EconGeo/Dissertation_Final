@@ -1,0 +1,157 @@
+\begin{longtabu}{lll}
+	\caption{Travel Mode - Built Environment MNL}                           \\
+	\label{model1} 
+\begin{tabular}{@{\extracolsep{1mm}}lD{.}{.}{-5} D{.}{.}{-5} } 
+	\\[-1.8ex]\hline 
+	\hline \\[-1.8ex] 
+	\\[-1.8ex] & \multicolumn{2}{c}{mode} \\ 
+	\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)}\\ 
+	\hline \\[-1.8ex] 
+	Bike:(intercept) & -3.626^{***}$ $(0.771) & -10.367^{***}$ $(3.546) \\ 
+	Transit:(intercept) & -1.271^{***}$ $(0.375) & -1.678$ $(1.184) \\ 
+	Walk:(intercept) & 1.768^{***}$ $(0.518) & 0.817$ $(1.168) \\ 
+	Auto: HH vehicles & 0.536^{***}$ $(0.062) & 0.528^{***}$ $(0.065) \\ 
+	Transit:transit pass & 0.837^{***}$ $(0.141) & 0.850^{***}$ $(0.145) \\ 
+	Auto:employer parking & 2.714^{***}$ $(0.134) & 2.795^{***}$ $(0.138) \\ 
+	Auto:license & 0.279^{***}$ $(0.047) & 0.272^{***}$ $(0.047) \\ 
+	Bike:HH bikes & -0.156$ $(0.143) & -0.304^{**}$ $(0.153) \\ 
+	Bike,Walk:path crosses hgwy & -0.495^{*}$ $(0.261) & -0.572^{**}$ $(0.279) \\ 
+	Bike:bcycle station 0-0.5M & 0.048^{*}$ $(0.025) & 0.082^{*}$ $(0.043) \\ 
+	Bike:bcycle stations 0.5-1M & 0.020^{**}$ $(0.009) & 0.027^{**}$ $(0.011) \\ 
+	Bike:miles bike path 0-0.25M & 0.004$ $(0.007) & 0.005$ $(0.007) \\ 
+	Bike:miles bike path 0.25-0.5M & -0.060$ $(0.086) & -0.056$ $(0.094) \\ 
+	Bike:miles bike paths 0.5-1M & 0.061^{***}$ $(0.021) & 0.067^{***}$ $(0.024) \\ 
+	Transit:bus stops 0-.25M & 0.002$ $(0.003) & -0.002$ $(0.003) \\ 
+	Transit:bus stops 0.25-0.5M & -0.109$ $(0.112) & -0.066$ $(0.120) \\ 
+	Transit:bus stops 0.5-1M & 0.104^{*}$ $(0.057) & 0.103^{*}$ $(0.059) \\ 
+	Transit:rail stops 0-0.5M & -0.225^{***}$ $(0.063) & -0.186^{***}$ $(0.068) \\ 
+	Transit:rail stops 0.5-1M & 1.010^{***}$ $(0.249) & 1.063^{***}$ $(0.256) \\ 
+	Transit:rail miles 0-0.5M & 0.162$ $(0.119) & 0.163$ $(0.120) \\ 
+	Transit:rail miles 0.5-1M & 0.234^{*}$ $(0.131) & 0.262^{*}$ $(0.136) \\ 
+	Transit:closest rail (M) & -1.171^{**}$ $(0.544) & -0.978^{*}$ $(0.565) \\ 
+	Transit:closest bus (M) & -0.486^{**}$ $(0.207) & -0.503^{**}$ $(0.213) \\ 
+	Bike: HH size & -0.600^{***}$ $(0.198) & -0.569^{***}$ $(0.213) \\ 
+	Transit:HH size & -0.005$ $(0.005) & -0.002$ $(0.005) \\ 
+	Walk:HH size & -0.004^{*}$ $(0.003) & -0.005^{*}$ $(0.003) \\ 
+	Bike:male & 0.007^{***}$ $(0.003) & 0.006^{**}$ $(0.003) \\ 
+	Transit:male & 1.112^{***}$ $(0.305) & 1.092^{***}$ $(0.320) \\ 
+	Walk:male & -0.836^{***}$ $(0.162) & -0.861^{***}$ $(0.164) \\ 
+	Bike:age & 0.394^{**}$ $(0.157) & 0.391^{**}$ $(0.164) \\ 
+	Transit:age & 0.408$ $(0.268) & 0.471$ $(0.289) \\ 
+	Walk:age & -0.126$ $(0.148) & -0.161$ $(0.151) \\ 
+	Bike:fixed schedule & 0.505^{***}$ $(0.152) & 0.557^{***}$ $(0.160) \\ 
+	Transit:fixed schedule & 0.000$ $(0.000) & -0.000$ $(0.000) \\ 
+	Walk:fixed schedule & 0.000^{**}$ $(0.000) & 0.000^{**}$ $(0.000) \\ 
+	Bike:cbg\_den & 0.00001 (0.00003) & $-$0.00002 (0.00004) \\ 
+	Transit:cbg\_den & 0.00003$^{**}$ (0.00001) & 0.00003$^{**}$ (0.00002) \\ 
+	Walk:cbg\_den & 0.00006$^{***}$ (0.00001) & 0.00006$^{***}$ (0.00002) \\ 
+	Bike:cbg\_emp\_den & $-$0.00000 (0.00001) & 0.00000 (0.00001) \\ 
+	Transit:cbg\_emp\_den & 0.00000 (0.00000) & 0.00000 (0.00000) \\ 
+	Walk:cbg\_emp\_den & 0.00001$^{***}$ (0.00000) & 0.00001$^{*}$ (0.00000) \\ 
+	Bike:arr\_hr & -0.074^{**}$ $(0.033) & -0.067^{**}$ $(0.034) \\ 
+	Transit:arr\_hr & -0.133^{***}$ $(0.018) & -0.132^{***}$ $(0.018) \\ 
+	Walk:arr\_hr & -0.005$ $(0.018) & -0.005$ $(0.018) \\ 
+	Bike:I(arr\_hr \textgreater = 8 & arr\_hr \textless  18) & 0.671^{**}$ $(0.268) & 0.750^{***}$ $(0.275) \\ 
+	Transit:I(arr\_hr \textgreater = 8 & arr\_hr \textless  18) & -0.425^{***}$ $(0.129) & -0.461^{***}$ $(0.130) \\ 
+	Walk:I(arr\_hr \textgreater = 8 & arr\_hr \textless  18) & 0.178$ $(0.147) & 0.186$ $(0.153) \\ 
+	Bike:work & 0.263$ $(0.211) & 0.329$ $(0.220) \\ 
+	Transit:work & 0.337^{***}$ $(0.063) & 0.359^{***}$ $(0.060) \\ 
+	Walk:work & -0.307^{*}$ $(0.170) & -0.304^{*}$ $(0.175) \\ 
+	Bike:shop & -0.369^{*}$ $(0.215) & -0.425^{*}$ $(0.223) \\ 
+	Transit:shop & -0.088$ $(0.075) & -0.080$ $(0.075) \\ 
+	Bike:Num of trips & -0.506^{***}$ $(0.140) & -0.548^{***}$ $(0.148) \\ 
+	Transit:num of trips & -1.029$ $(1.014) & -0.914$ $(1.028) \\ 
+	Walk:num of trips & -0.297$ $(0.253) & -0.348$ $(0.258) \\ 
+	Bike:work hours & -0.391$ $(0.466) & -0.566$ $(0.482) \\ 
+	Transit:work hours & 0.292$ $(0.288) & 0.332$ $(0.304) \\ 
+	Walk:work hours & -0.062$ $(0.140) & -0.056$ $(0.143) \\ 
+	Bike:telecommute & -0.394^{**}$ $(0.184) & -0.359^{*}$ $(0.189) \\ 
+	Transit:telecommute & -0.532^{***}$ $(0.118) & -0.545^{***}$ $(0.117) \\ 
+	Walk:telecommute & -0.003$ $(0.011) & -0.004$ $(0.011) \\ 
+	Bike:employed & -2.422^{***}$ $(0.223) & -2.463^{***}$ $(0.234) \\ 
+	Transit:employed &  & 0.001$ $(0.024) \\ 
+	Walk:employed &  & -0.004$ $(0.010) \\ 
+	Walk:pz5res\_low &  & -0.011$ $(0.010) \\ 
+	Bike:pz5res\_med &  & -0.023$ $(0.043) \\ 
+	Transit:pz5res\_med &  & 0.003$ $(0.011) \\ 
+	Walk:pz5res\_med &  & -0.008$ $(0.011) \\ 
+	Bike:pz5res\_high &  & -0.007$ $(0.025) \\ 
+	Transit:pz5res\_high &  & -0.003$ $(0.011) \\ 
+	Walk:pz5res\_high &  & -0.021^{*}$ $(0.011) \\ 
+	Bike:pz5ind &  & 0.011$ $(0.044) \\ 
+	Transit:pz5ind &  & -0.023$ $(0.016) \\ 
+	Walk:pz5ind &  & -0.040^{**}$ $(0.017) \\ 
+	Bike:pz5bus\_low &  & 0.058^{**}$ $(0.028) \\ 
+	Transit:pz5bus\_low &  & -0.036^{**}$ $(0.016) \\ 
+	Walk:pz5bus\_low &  & 0.011$ $(0.014) \\ 
+	Bike:pz5bus\_high &  & 0.000$ $(0.027) \\ 
+	Transit:pz5bus\_high &  & 0.000$ $(0.011) \\ 
+	Walk:pz5bus\_high &  & -0.009$ $(0.011) \\ 
+	Bike:pbz13res\_low &  & 0.008$ $(0.042) \\ 
+	Transit:pbz13res\_low &  & -0.001$ $(0.016) \\ 
+	Walk:pbz13res\_low &  & -0.019$ $(0.019) \\ 
+	Bike:pbz13res\_med &  & -0.065$ $(0.051) \\ 
+	Transit:pbz13res\_med &  & -0.018$ $(0.017) \\ 
+	Walk:pbz13res\_med &  & -0.016$ $(0.021) \\ 
+	Bike:pbz13res\_high &  & 0.001$ $(0.044) \\ 
+	Transit:pbz13res\_high &  & 0.002$ $(0.017) \\ 
+	Walk:pbz13res\_high &  & -0.013$ $(0.020) \\ 
+	Bike:pbz13bus\_low &  & 0.004$ $(0.060) \\ 
+	Transit:pbz13bus\_low &  & 0.000$ $(0.025) \\ 
+	Walk:pbz13bus\_low &  & -0.013$ $(0.028) \\ 
+	Bike:pbz13bus\_high &  & -0.020$ $(0.044) \\ 
+	Transit:pbz13bus\_high &  & -0.001$ $(0.017) \\ 
+	Walk:pbz13bus\_high &  & -0.003$ $(0.020) \\ 
+	Bike:pbz13ind &  & -0.010$ $(0.064) \\ 
+	Transit:pbz13ind &  & 0.029$ $(0.020) \\ 
+	Walk:pbz13ind &  & 0.008$ $(0.024) \\ 
+	Bike:pbz26res\_low &  & -0.004$ $(0.054) \\ 
+	Transit:pbz26res\_low &  & 0.005$ $(0.017) \\ 
+	Walk:pbz26res\_low &  & 0.037^{*}$ $(0.022) \\ 
+	Bike:pbz26res\_med &  & 0.033$ $(0.057) \\ 
+	Transit:pbz26res\_med &  & 0.019$ $(0.018) \\ 
+	Bike:CB pop density &  & 0.034$ $(0.023) \\ 
+	Transit: CB pop density &  & -0.000$ $(0.057) \\ 
+	Walk:CB pop density &  & 0.001$ $(0.018) \\ 
+	Bike:CB job density &  & 0.033$ $(0.022) \\ 
+	Transit:CB job density &  & -0.001$ $(0.093) \\ 
+	Walk:CB job density &  & -0.059$ $(0.036) \\ 
+	Bike:CBG pop density &  & -0.003$ $(0.044) \\ 
+	Transit:CBG pop density &  & -0.002$ $(0.055) \\ 
+	Walk:CBG pop density &  & -0.014$ $(0.019) \\ 
+	Bike:CBG job density &  & 0.010$ $(0.022) \\ 
+	Transit:CBG job density &  & -0.054$ $(0.066) \\ 
+	Walk:CBG job density &  & -0.016$ $(0.021) \\ 
+	Bike:intersections 0-0.01M &  & 0.036$ $(0.026) \\ 
+	Transit:intersections 0-0.01M &  & 0.061$ $(0.049) \\ 
+	Walk:intersections 0-0.01M &  & 0.004$ $(0.015) \\ 
+	Bike:intersection 0.01-0.25M &  & 0.005$ $(0.017) \\ 
+	Transit:intersections 0.01-0.25M &  & 0.018$ $(0.051) \\ 
+	Walk:intersections 0.01-0.25M &  & -0.001$ $(0.016) \\ 
+	Bike:intersection 0.25-0.5M &  & -0.004$ $(0.018) \\ 
+	Transit:intersections 0.25-0.5M &  & 0.045$ $(0.053) \\ 
+	Walk:intersections 0.25-0.5M &  & 0.011$ $(0.017) \\ 
+	Bike:intersection 0.5-1M &  & 0.021$ $(0.019) \\ 
+	Transit:intersections 0.5-1M &  & 0.023$ $(0.125) \\ 
+	Walk:intersections 0.5-1M &  & 0.054$ $(0.050) \\ 
+	Walk:pbz52bus\_low &  & 0.052$ $(0.061) \\ 
+	Bike:pbz52bus\_high &  & 0.108^{*}$ $(0.055) \\ 
+	Transit:pbz52bus\_high &  & 0.005$ $(0.018) \\ 
+	Walk:pbz52bus\_high &  & 0.040^{**}$ $(0.020) \\ 
+	Bike:pbz52ind &  & 0.106^{**}$ $(0.054) \\ 
+	Transit:pbz52ind &  & 0.011$ $(0.017) \\ 
+	Walk:pbz52ind &  & 0.002$ $(0.019) \\ 
+	Auto:time & 0.042^{***}$ $(0.004) & 0.043^{***}$ $(0.004) \\ 
+	Bike:time & 0.080^{***}$ $(0.016) & 0.082^{***}$ $(0.016) \\ 
+	Transit:time & 0.039^{***}$ $(0.003) & 0.039^{***}$ $(0.003) \\ 
+	Walk:time & 0.060^{***}$ $(0.010) & 0.062^{***}$ $(0.011) \\ 
+	Observations & \multicolumn{1}{c}{6,042} & \multicolumn{1}{c}{6,042} \\ 
+	R$^{2}$ & \multicolumn{1}{c}{0.442} & \multicolumn{1}{c}{0.462} \\ 
+	Log Likelihood & \multicolumn{1}{c}{-2,109.461} & \multicolumn{1}{c}{-2,033.364} \\ 
+	LR Test & \multicolumn{1}{c}{3,341.757$^{***}$ (df = 64)} & \multicolumn{1}{c}{3,493.950$^{***}$ (df = 136)} \\ 
+	\hline \\[-1.8ex] 
+	\textit{Notes:} & \multicolumn{2}{l}{$^{***}$Significant at the 1 percent level.} \\ 
+	& \multicolumn{2}{l}{$^{**}$Significant at the 5 percent level.} \\ 
+	& \multicolumn{2}{l}{$^{*}$Significant at the 10 percent level.} \\ 
+\end{tabular} 
+\end{longtabu} 

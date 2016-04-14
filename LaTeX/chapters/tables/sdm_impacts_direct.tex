@@ -1,0 +1,92 @@
+\newcolumntype{d}[1]{D{.}{.}{#1}} 
+\tabucolumn d
+\begin{longtabu} to \linewidth  {l*{4}{d{-2}}} 
+	\caption{Direct Effects: SDM Model, Binary Spatial Weights Matrix  }
+	\label{sdm_direct_reg_w} \\
+	%\begin{tabular}{@{\extracolsep{1mm}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
+	%	\\[-1.8ex] %\hline 
+	\hline
+	% \\[-1.8ex] 
+	\\[-1.8ex]  \multicolumn{4}{l}{Dependent Variable:  Non-auto Transportation Mode = 1} \\ 
+	\\[-1.8ex] Variable & \multicolumn{1}{c}{Lower 95\%} & \multicolumn{1}{c}{Posterior Mean} & \multicolumn{1}{c}{Upper 95\%}&\\ 
+	\hline \\[-1.8ex] 
+HH size & -0.0175 & -0.0091 & -0.0006 \\ 
+  HH vehicles & -0.0862 & -0.0728 & -0.0602 \\ 
+  HH bikes & 0.0071 & 0.0123 & 0.0176 \\ 
+  Male & 0.0198 & 0.0359 & 0.0527 \\ 
+  Age & -0.0032 & -0.0026 & -0.0019 \\ 
+  Income (000s) & -0.0002 & -0.0000 & 0.0001 \\ 
+  College education & -0.0112 & 0.0070 & 0.0231 \\ 
+  Employed & -0.0327 & -0.0149 & 0.0023 \\ 
+  Tour distance & -0.0036 & -0.0027 & -0.0018 \\ 
+  Tour crosses highway & -0.1795 & -0.1565 & -0.1333 \\ 
+   Miles bike lanes $<$ 1 M. & -0.0126 & -0.0061 & 0.0001 \\ 
+  Miles of bus routes $<$ 0.5 M. & 0.0003 & 0.0021 & 0.0040 \\ 
+  Bus stops $<$ 0.5 M. & 0.0008 & 0.0022 & 0.0036 \\ 
+  Rail stops $<$ 0.5 M. & -0.0310 & -0.0145 & 0.0020 \\ 
+  Miles of rail lines $<$ 0.5 M. & -0.0018 & 0.0060 & 0.0145 \\ 
+  Intersections with 0.5 M & -0.0004 & 0.0000 & 0.0005 \\ 
+  CBG population/sq. mile & -0.0000 & 0.0000 & 0.0000 \\ 
+  CBG jobs/sq. mile & -0.0000 & 0.0000 & 0.0000 \\ 
+   Work stops & 0.0005 & 0.0092 & 0.0175 \\ 
+  Shopping stops & -0.0474 & -0.0373 & -0.0276 \\ 
+  Social stops & -0.0362 & -0.0193 & -0.0032 \\ 
+  Residential Low Density, 0-1/4 mile & -0.0035 & -0.0021 & -0.0008 \\ 
+  Residential Medium Density, 0-1/4 mile & -0.0037 & -0.0021 & -0.0007 \\ 
+  Residential High Density 0-1/4 mile & -0.0034 & -0.0019 & -0.0004 \\ 
+  Business Low Density 0-1/4 mile & -0.0018 & 0.0013 & 0.0043 \\ 
+  Business High Density 0-1/4 mile & -0.0027 & -0.0011 & 0.0003 \\ 
+  Industrial 0-1/4 mile & -0.0040 & -0.0018 & 0.0003 \\ 
+  Residential Low Density, 1/4-1/2 mile & -0.0007 & 0.0018 & 0.0043 \\ 
+  Residential Medium Density, 1/4-1/2 mile & -0.0011 & 0.0017 & 0.0045 \\ 
+  Residential High Density 1/4-1/2 mile & -0.0011 & 0.0017 & 0.0044 \\ 
+  Business Low Density 1/4-1/2 mile & -0.0086 & -0.0029 & 0.0028 \\ 
+  Business High Density 1/4-1/2 mile & -0.0038 & -0.0011 & 0.0015 \\ 
+  Industrial 1/4-1/2 mile & -0.0015 & 0.0018 & 0.0050 \\ 
+  Residential Low Density, 1/2-1 mile & -0.0039 & -0.0001 & 0.0045 \\ 
+  Residential Medium Density, 1/2-1 mile & -0.0056 & -0.0014 & 0.0034 \\ 
+  Residential High Density 1/2-1 mile & -0.0043 & 0.0005 & 0.0054 \\ 
+  Business Low Density 1/2-1 mile & -0.0061 & 0.0059 & 0.0182 \\ 
+  Business High Density 1/2-1 mile & -0.0036 & 0.0011 & 0.0062 \\ 
+  Industrial 1/2-1 mile & -0.0045 & -0.0005 & 0.0041 \\ 
+  (W) HH size & -0.1500 & -0.0461 & 0.0524 \\ 
+  (W) HH vehicles & -0.3331 & -0.2089 & -0.0977 \\ 
+  (W) HH bikes & -0.0662 & -0.0070 & 0.0506 \\ 
+  (W) Male & -0.2548 & 0.0616 & 0.3758 \\ 
+  (W) Age & -0.0105 & -0.0025 & 0.0056 \\ 
+  (W) Income (000s) & -0.0000 & 0.0023 & 0.0046 \\ 
+  (W) College education & -0.1302 & 0.1161 & 0.3765 \\ 
+  (W) Employed & -0.1539 & 0.1111 & 0.4041 \\ 
+  (W) Tour distance & -0.0255 & -0.0129 & 0.0004 \\ 
+  (W) Tour crosses highway & -0.2803 & -0.0663 & 0.1321 \\ 
+  (W)  Miles bike lanes $<$ 1 M. & -0.0157 & -0.0035 & 0.0081 \\ 
+  (W) Miles of bus routes $<$ 0.5 M. & -0.0045 & 0.0046 & 0.0142 \\ 
+  (W) Bus stops $<$ 0.5 M. & -0.0050 & -0.0006 & 0.0040 \\ 
+  (W) Rail stops $<$ 0.5 M. & -0.0470 & 0.0171 & 0.0778 \\ 
+  (W) Miles of rail lines $<$ 0.5 M. & -0.0085 & 0.0068 & 0.0211 \\ 
+  (W) Intersections with 0.5 M & -0.0022 & -0.0010 & 0.0004 \\ 
+  (W) CBG population/sq. mile & 0.0000 & 0.0000 & 0.0000 \\ 
+  (W) CBG jobs/sq. mile & -0.0000 & -0.0000 & 0.0000 \\ 
+  (W)  Work stops & -0.0506 & 0.0976 & 0.2434 \\ 
+  (W) Shopping stops & -0.2774 & -0.1296 & 0.0188 \\ 
+  (W) Social stops & -0.0798 & 0.1860 & 0.4524 \\ 
+  (W) Residential Low Density, 0-1/4 mile & -0.0142 & -0.0040 & 0.0058 \\ 
+  (W) Residential Medium Density, 0-1/4 mile & -0.0069 & 0.0035 & 0.0141 \\ 
+  (W) Residential High Density 0-1/4 mile & -0.0106 & 0.0002 & 0.0103 \\ 
+  (W) Business Low Density 0-1/4 mile & -0.0205 & 0.0045 & 0.0314 \\ 
+  (W) Business High Density 0-1/4 mile & -0.0076 & 0.0043 & 0.0162 \\ 
+  (W) Industrial 0-1/4 mile & -0.0071 & 0.0079 & 0.0235 \\ 
+  (W) Residential Low Density, 1/4-1/2 mile & -0.0048 & 0.0087 & 0.0237 \\ 
+  (W) Residential Medium Density, 1/4-1/2 mile & -0.0142 & 0.0012 & 0.0188 \\ 
+  (W) Residential High Density 1/4-1/2 mile & -0.0158 & 0.0002 & 0.0174 \\ 
+  (W) Business Low Density 1/4-1/2 mile & -0.0366 & 0.0038 & 0.0431 \\ 
+  (W) Business High Density 1/4-1/2 mile & -0.0278 & -0.0116 & 0.0039 \\ 
+  (W) Industrial 1/4-1/2 mile & -0.0294 & -0.0088 & 0.0120 \\ 
+  (W) Residential Low Density, 1/2-1 mile & -0.0110 & -0.0011 & 0.0097 \\ 
+  (W) Residential Medium Density, 1/2-1 mile & -0.0110 & -0.0001 & 0.0107 \\ 
+  (W) Residential High Density 1/2-1 mile & -0.0137 & -0.0024 & 0.0090 \\ 
+  (W) Business Low Density 1/2-1 mile & -0.0373 & -0.0057 & 0.0273 \\ 
+  (W) Business High Density 1/2-1 mile & 0.0023 & 0.0153 & 0.0285 \\ 
+  (W) Industrial 1/2-1 mile & -0.0058 & 0.0082 & 0.0225 \\ 
+   \hline
+\end{longtabu}

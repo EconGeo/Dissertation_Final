@@ -1,0 +1,306 @@
+% Chapter 2: Spatial Autoregressive and Spatial Error Models of Travel Behvior and Land Use Restriction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+Location of economic activity has always been an important aspect of regional economics.  Spatial proximity plays a key role in many decisions made by individuals when it comes to weighing the benefits and costs of purchase decisions, allocation of resources, and other economic behavior in general.  Transportation choices are particularly affected by location, and distances between origins and destinations undoubtedly influence the travel decisions among individuals.  
+
+While the study of regional economics and regional science in general has been around for a long time, the development of formal econometric techniques to address location is a more recent development in the field.  Of particular importance to the field of spatial econometrics is the treatment of spatial dependence (spatial autocorrelation) and spatial heterogeneity (spatial structure).  Spatial dependence and spatial heterogeneity are important in applied economic models because the presence of these phenomena may invalidate or bias mainstream results.  In addition, these issues have been largely ignored in the mainstream literature. \citep{Anselin1988}
+
+This chapter focuses on consumer transportation mode choice in a spatial context.  Behavioral models of transportation choice follow the random utility model addressed in the previous chapter.  In  this chapter, the  travel behavior model is adapted from the preceding chapter to incorporate spatial dependence and spatial heterogeneity to test whether the results are significantly different from the standard econometric model of transportation mode choice where space is dealt with informally.  It is particularly important to investigate the presence of spatial dependence and heterogeneity in regards to land use restrictions because each individual faces a unique set of transportation choices based on their residential location and the proximity of this residential location to available goods, service, recreation, transportation, and employment opportunities.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Methodology:  The Spatial Econometric Approach}
+Spatial econometrics differentiates itself from mainstream econometric approaches  by applying formal spatial modeling best summarized in Luc Anselin's pioneering work on the topic:% 
+\begin{quotation}
+	``I will consider the field of spatial econometrics to consist of those methods and techniques that, based on formal representation of the structure of spatial dependence and spatial heterogeneity, provide the means to carry out the proper specification, estimation, hypothesis testing, and prediction for models in regional science.'' \citep{Anselin1988}[p.10]
+\end{quotation}	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Spatial Effects}
+Regional science and regional economics inherently deal with issues related to human behavior across space, cities, and regions.  The term \textit{spatial econometrics} and its designation as a distinct branch of econometrics dates back to the seminal work of \cite{paelinck1979} that collected a growing body of literature in the regional sciences that attempted to formally deal with the problems inherent in modeling spatial data in the context of regional econometric models.  The primary characteristics that delineate the field according to \cite{paelinck1979} and summarized by \cite{Anselin1988}[p.7] are:
+\begin{quotation}
+\begin{itemize}
+ \item the role of spatial interdependence in spatial models
+ \item the asymmetry in spatial relations
+ \item the importance of explanatory factors located in other spaces
+ \item differentiation between ex post and ex ante interaction
+ \item explicit modeling of space
+\end{itemize}
+\end{quotation}
+
+While it is possible to measure and model spatial data using standard econometric techniques  by including variables in the model that have a spatial nature to their measurement (as I have done in the previous chapter, i.e.  the percentage of zoning types within as distance from a respondents residence), the distinction to be made here is that spatial econometrics formally deals with specific spatial aspects of the data at hand that preclude the use of traditional econometric techniques, and more particularly, address spatial dependence and spatial heterogeneity \citep{Anselin1988, LeSage2009}.  
+
+Spatial dependence addresses the lack of mutual independence across observations in cross-sectional data-sets and is often referred to as spatial autocorrelation following the path-breaking work of \cite{cliff1968, cliff1973}. In essence, addressing spatial dependence is the development of formal mathematical specifications of economic models that address Tobler's first law of geography, that ''everything is related to everything else, but near things are more related than distant things.''\citep{tobler1970}[p.236]  Spatial dependence is estimated by the relative location of one observation in the dataset to another, with an emphasis on the effect of distance between observations.  Spatial dependence is caused by a variety of measurement errors,  by spatial spill-over effects or spatial externalities \citep{Anselin1988}, by spatially autocorrelated variables \citep{Fingleton1999a}, or any situation in which the covariance of observations across geographical space is not equal to zero \citep{Anselin2001}.  
+
+Spatial Heterogeneity is the ``lack of stability over space of the behavioral or other relationship under study.  More precisely, this implies that functional forms and parameters vary with location and are not homogeneous throughout the data set.''\citep{Anselin1988}[p.9]  This type of econometric model addresses these issues by formally modeling the variation in parameters across space to address the heterogeneous effect an independent variable may have in different locations.  More importantly, when spatial dependence and spatial heterogeneity are present in the data generating process and not explicitly modeled, the results of mainstream econometric techniques may be biased, inefficient, or both \cite{Anselin1988,LeSage2009}.  Spatial econometric techniques address spatial processes within the data generating process and are generally preferred when spatial processes are at work in the data.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Measuring Spatial Dependence}
+
+The global measure of spatial autocorrelation is Moran's I   \citep{Moran1950} 
+\begin{equation}
+I = \frac{n}{\sum^{n}_{i=1} \sum^{n}_{j=1} w_{ij}} \frac{\sum^{n}_{i=1} \sum^{n}_{j=1} w_{ij}(x_i - \bar{x})(x_j - \bar{x})}{\sum^{n}_{i=1}(x_i - \bar{x})^2}
+\end{equation}
+and Geary's C \citep{Geary1954}
+\begin{equation}
+C = \frac{(n-1)}{2\sum^{n}_{i=1} \sum^{n}_{j=1} w_{ij}} \frac{\sum^{n}_{i=1} \sum^{n}_{j=1} w_{ij}(x_i - x_j)^2}{\sum^{n}_{i=1}(x_i - \bar{x})^2}
+\end{equation}
+
+Moran's I ranges between 0 and 1, with 1 being the absence of spatial autocorrelation, and 0 indicating strong spatial dependence of the observed variable \cite{Moran1950}.  Geary's C ranges between 0 and 2, with values less than 1 demonstrating increasing positive spatial autocorrelation and values greater than 1 indicating increasing negative spatial autocorrelation \cite{Geary1954}.  Moran's I is a global measure of spatial autocorrelation, while Geary's C indicates more local spatial autocorrelation. \autoref{moran} shows that Moran's I is close to 0 for many of the variables under using the binary row standardized spatial weights matrix, indicating global autocorrelation, with slightly less indication of autocorrelation using the inverse distance row standardized spatial weights matrix.  Geary's C statistics also show local positive autocorrelation under both spatial weights matrices.  This result is an indication that spatial dependence may have a significant presence in the underlying data generating processes, and the dataset may exhibit spatial processes including clustering of socioeconomic traits, political zoning  boundary determination, and transit network design.  
+
+% % Table of Moran's I and Geary's C
+\begin{singlespace}\small
+	\include{tables/moran}	
+\end{singlespace}
+
+Significance tests for the Moran's I and Geary's C test statistics for normalized variance are given in table~\autoref{morantest} and follow the method proposed in \cite{cliff1968}.  All test statistics are significant at the 1 percent level, indicating the presence of spatial dependence and confirming the statistical significance of the Moran's I and Geary's C results in \autoref{moran}.  This result is not surprising, considering that spatial segregation of land use is one of the objectives of zoning laws, and that socioeconomic segregation is a widely accepted phenomenon that is the subject of many areas of study.  
+
+
+
+
+% % Table of test against normalization for Moran's I and Geary's C
+\begin{singlespace}\small 
+	\input{tables/morantest}
+\end{singlespace}
+
+These test results justify using spatial econometric modeling techniques to address the spatial dependence and heterogeneity that may be present in the data.  I focus on three specifications of spatial models, the spatial autoregressive model (SAR) which addresses spatial dependence, the spatial error model (SEM) which addresses spatial heterogeneity, and the spatial Durbin model (SDM) which simultaneously addresses spatial dependence and spatial heterogeneity.  As suggested by \cite{LeSage2009} I also estimate each of the models using the two most common row standardized spatial weights matrices and use a Lagrange multiplier test to determine the which spatial weight matrix best fits the data.  The two spatial weights matrices considered are the binary and inverse distance spatial weight matrices with row standardization. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Spatial Weights Matrix}
+
+At the center of spatial econometrics is defining spatial association amongst observations \citep{Anselin1988, Arbia2006, Anselin2010}.  The typical convention is to define spatial connectedness through the use of a symmetric matrix $\mathbf{W}$ of dimensions $\mathit{NxN}$  whose strictly non-negative elements $W_{ij}$ indicate the spatial connectedness between units $i$ and $j$.  The pioneering work of \cite{Moran1950} and \cite{Geary1954} first developed the notion of a binary weight matrix where element $W_{ij}$ was assigned a value of 1 if two observational units were contiguous and thus determined to exhibit influence on each other and 0 otherwise.  \cite{cliff1973, cliff1981} extended this concept to include a more general specification of the spatial weight matrix by incorporating inverse distance and negative exponentials of distance as the measure of spatial influence rather than the binary specification.  The spatial weight matrix is often row standardized so that each row sums to 1.  Each element of a row standardized spatial weights matrix $\mathbf{W}^s$ is then calculated as%
+\begin{equation}
+w^{s}_{ij} =\frac{w_{ij}} {\displaystyle\sum_{j}w_{ij}}
+\end{equation}
+
+The decision to standardize the spatial weights matrix is not at all clear from the literature, and decisions on how to form the spatial weights matrix are generally determined by a priori assumptions made by the researcher in the context of each study. \cite{Anselin1988} argues that in certain cases, such as inverse distance, the standardization of the spatial weights matrix may eliminate the economic interpretation of the results.  However, the consensus is that the standardization of the spatial weights matrix is the preferable approach to avoid magnitude complications amongst variables and avoid certain spatially weighted variables dominating the results of spatial model \citep{LeSage2009}.
+
+The spatial weights matrix was originally developed in the context of areal units and each areal unit was said to be neighbors and therefore exert influence on other observations if the two observational units shared a common border or some similar derivation of this measure \cite{cliff1973}.  When the observational unit is in the form of points in space rather than areal units (as the data in this study is), neighbors are instead identified on the basis of distance.  Two spatial units \textit{i} and \textit{j} are considered neighbors if $0 \leq d_{ij} \leq D$ with $d_{ij}$ a distance measure between points and $D$ the bandwidth after which interaction between observations is considered non-existent and that element of the weights matrix is assigned a 0 weight \citep{Anselin1988}.   This does not preclude spatial effects of more distant neighbors being present, but influence is modeled as a higher order recursive effect on any given observation through the spatial dependence parameter $\rho$ on the dependent variable in spatial autoregressive and spatial durbin models, as well as through the effect spatially weighted independent variables have on the dependent variable in spatial durbin models. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Spatial Autoregressive Model}
+
+The spatial autoregressive model (SAR) formally estimates the presence of spatial dependence by incorporating a spatially lagged dependent variable on the right hand side of the regression equation \cite{cliff1973}. Thus, observations  of the dependent variable are influenced by other observations of the dependent variable nearby.  In the context of the present study, the SAR model is a way of controlling for the influence of neighboring survey respondents' transportation mode choices on the observational unit under study.  In the binomial context, the choice variable observed (transportation mode = non-auto) depends on the underlying utility of the choice indicator observed.  The underlying latent variable $y^{*}_{i} = U_{1i} - U_{0i}$ and follows a normal distribution in the probit model estimation. The general SAR model in a binomial context can be formally stated as:
+
+\begin{equation}
+\begin{split}
+y^{*}_{i} &= \rho W y + X\beta + \varepsilon \\
+\varepsilon & \sim N(0,\sigma^2 I_n)\\
+y_i &= 1,\quad \text{if} \quad y^{*}_{i} \geq 0\\
+y_i &= 0,\quad  \text{if} \quad  y^{*}_{i} < 0  \\
+\end{split}
+\end{equation}%
+%
+where $ y_{i} = 1 $ if the binomial choice is observed, and 0 otherwise,  \textbf{W} is the spatial weights matrix, \textit{y} is a binomial vector of all dependent variables for the data set,  $\rho$ is an estimated parameter of spatial decay of autocorrelation between observations,  \textbf{X} is a matrix of independent variables, and $\beta$ is a vector of estimated coefficients.  The latent utility construct implies that $Pr(y_i=1) = Pr(U_{1i} \geq U_{0i}) = Pr(y^{*}_{i} \geq 0)$.\citep{LeSage2009}
+
+Typically, the SAR model is used to adjust for dependent variables that have a direct effect on the realization of the dependent variable in close proximity.  The classic example is SAR hedonic pricing models of residential home values \cite{pace2004simultaneous}.  The value of a house sold has a direct impact on other residential home prices in the area, and has been shown to be a valuable addition to traditional home price models \citep{Anselin2007}.  Conceptually, the SAR would be the correct model to assess the impacts of different zoning regimes by studying the effect that neighbors' transportation behavior may have on an individual's transportation choices.  While theoretically the model has justifiable merit in controlling for spatial dependence, it is important to not that this model does not distinguish the direction of causality.  It is quite possible that people who enjoy non-auto forms of transportation tend to live in the same locations because these locations provide employment, leisure, and shopping in close enough proximity to make non-auto trips more convenient.  However, this model does identify if there is spatially clustered transportation behavior, and how fast this clustering effect deteriorates with distance and is therefore relevant to the study of spatial effects of zoning laws on transportation mode choice.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Spatial Error Model}
+
+In contrast to the spatial autoregressive model, the spatial error model (SER) allows for heterogeneous effects of independent regressors across space.  This adaptation of the traditional OLS model allows for both global coefficients and local variation across space of coefficients to be modeled.  In the binomial choice context, the latent variable approach of unobserved utility of the resulting choice indicator is used for the probit estimator similar to the process described for the SAR model.  The SER binomial choice model can be formally stated as:
+
+\begin{equation}
+\begin{split}
+y^{*}_{i} &= X\beta + u \\
+u &= \lambda Wu + e \\
+e &\sim N(0, \sigma^{2}I_n) \\
+y_i &= 1,\quad \text{if} \quad y^{*}_{i} \geq 0\\
+y_i &= 0,\quad  \text{if} \quad  y^{*}_{i} < 0  \\
+\end{split}
+\end{equation}% 
+%
+Where \textit{W} is the spatial weights matrix.  The SER model allows for spatial variance of the error term and the estimation of its spatial lag parameter $\lambda$.  Unlike the SAR model, indirect, and direct effects cannot be estimated because there is no feedback loop of changes in the independent regressors on the dependent variable, since the there is no autocorrelation parameter present.  The parameter $\lambda$ represents the extent to which heterogeneous independent coefficient estimates vary across space.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Spatial Durbin Model}   
+
+The spatial Durbin model (SDM) allows for the estimation of both spatial autocorrelation and spatial dependence, simultaneously including a spatially lagged dependent variable as well as spatially lagged independent variables in a single model.  The advantages of this model are the simultaneous control of both spatial dependence and spatial heterogeneity, but in practice can suffer from the curse of dimensionality.  One advantage of the Bayesian approach to model estimation is the ability to estimate such models without running into non-convergence problems that exist in maximization procedures employed in maximum likelihood and generalized method of moments estimation that can lead to severe computational challenges.  The binomial probit SDM model can be formally stated as:
+
+\begin{equation}
+\begin{split}
+y^{*}_{i} &= \rho W y + X\beta + WX\theta + \varepsilon \\
+\varepsilon &\sim N(0, \sigma^{2}I_n) \\
+y_i &= 1,\quad \text{if} \quad y^{*}_{i} \geq 0\\
+y_i &= 0,\quad  \text{if} \quad  y^{*}_{i} < 0  \\
+\end{split}
+\end{equation}%
+%
+where $\rho$ is the estimated parameter of spatial autocorrelation of the dependent variable,$\beta$ is the estimated vector of parameters on the independent variables, and $\theta$ is the vector of estimated parameters on the spatially lagged independent variables.
+
+The estimation of the SDM is similar to that of the SAR model with the independent variables multiplied by the spatial weights matrix added as additional independent variables.  When estimating the SAR, SEM, and SDM models, it is important to note that the true data generating process is unknown, and that the true data generating process and resulting spatial dependence and spatial heterogeneity.  \cite{LeSage2009} detail the advantages of each approach, and determine that when the correct model is unknown and not dictated by theory, only the SDM gives unbiased results even if the true model is SAR or SEM.  More particularly, when the true data generating process is the SEM model, SAR and SDM will produce unbiased but inefficient estimates.  When the true data generating process is the SAR model, the SEM model produces biased estimates, while the SDM would not.  If the true data generating process was the SDM model, the other models will have omitted variable bias.  The SAR, SEM, and SDM  versions of the travel behavior - built environment models are estimated below using both a binary and inverse distance weighted row standardized spatial weights matrix.  General measures of spatial dependence and model validity are also estimated. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Estimation Techniques}
+
+\cite{McMillen1992} was the first to propose techniques for estimating the SAR and SEM probit models.  Due to the complicated error structure of the SAR and SEM probit models, direct maximum-likelihood estimation is not possible, however, in the EM procedure, the discrete variable is replaced by the expected value of the underlying latent variable, and the expectation is calculated iteratively until convergence.  \cite{McMillen1992} among others deem this procedure impractical for large datasets however.  \cite{LeSage2000} outlines several other drawbacks to the procedure.  First, the estimation procedure requires the estimation of the likelihood function which prohibits  use of the information matrix for calculating the precision of the parameter estimates.  Attempts to circumvent this problem produces biased estimation of the covariance matrix.  Second, McMillen's approach requires a functional form of the heteroskedastic spatial variance, and leads to varying inferences across alternative specifications.  Alternatively, Bayesian estimation techniques do not require these assumptions about the functional form of the error process.
+
+Following the work of \cite{Chib1992} and \cite{Albert1993} which detail the estimation of probit and logit models for discrete choices using Markov Chain Monte Carlo estimation in a Bayesian context, \cite{LeSage2000} proposes a Bayesian estimation  technique based on the Gibbs sampling approach.  The estimation technique specifies a complete set of prior distributions for all parameters in the model and then samples from these distributions until a large number of parameter draws are obtained that converge to the true join posterior distribution of the parameters.  This approach overcomes the drawbacks of the approach proposed by \cite{McMillen1992} because the posterior distributions are available to calculate valid inference measures of the parameter estimates, thus escaping the bias inherent in the EM algorithm and the necessity to specify the functional form of model variance over space \textit{apriori}. The likelihood function for the SAR and SEM models is
+
+\begin{equation} \label{sarlikelihood}
+ L(y,W|\rho,\beta ,\sigma^2)=\dfrac{1}{2\pi\sigma^{2(n/2)}}|I_n - \rho W|exp \left\lbrace -\frac{1}{2\sigma^2}(\varepsilon'\varepsilon)\right\rbrace 
+\end{equation}
+\text{where}% 
+\begin{align*}
+ \varepsilon &= (I_n - \rho W)y - X\beta \qquad \qquad  \text{ for the SAR model,} \\
+ \varepsilon &= (I_n - \rho W)(y - X\theta) - X\beta \quad  \text{ for the SDM model, and} \\
+ \varepsilon &= (I_n - \lambda W)(y - X\beta) \qquad \;\;\quad \text{ for the SEM model.\citep[p.23]{LeSage2000} }
+\end{align*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Econometric Model and Results}
+
+\subsection{Econometric Model}
+Three econometric models are specified following the theoretical specifications for the SAR, SEM, and SDM above.  The binary choice indicator variable $y$ is set to 1 if the survey respondent used non-auto transportation for an observed tour, and 0 otherwise.  The spatial probit model is for the SAR, SEM, and SDM is comprised of the travel choice indicator variable and the independent regressors which are the same as in the previous chapter.  The independent regressor matrix $X = [I \; S \; BE]$ where $I$ is an $n\; x\; 1$  vector of ones, $S$ is a matrix of sociodemographic characteristics, and $BE$ is a matrix of built environment characteristics including zoning variable used in the previous chapter.  The formal equation to be estimated for the SDM is then:
+
+\begin{equation}
+\begin{split}
+y^{*}_{i} &= \rho W y + [I \; S \; BE]\beta + W[I \; S \; BE]\theta + \varepsilon \\
+\varepsilon &\sim N(0, \sigma^{2}I_n) \\
+y_i &= 1,\quad \text{if} \quad y^{*}_{i} \geq 0\\
+y_i &= 0,\quad  \text{if} \quad  y^{*}_{i} < 0  \\
+\end{split}
+\end{equation}% 
+where $X =  [I \; S \; BE]$ and follows the same substitution for the SAR and SEM.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Determination of the Spatial Weights Matrix}
+The spatial weight matrix, \textit{W}, in the equations above is developed by a two step process.  In the first step, observations are determined to be spatial neighbors if they are within a distance \textit{d} from one another.  In the second step, the neighbor matrix is transformed into a spatial weight matrix \textit{W} by either row standardizing the matrix so that all rows sum to 1, or applying a function based on distance or some other criteria to the neighbor matrix.    While there are no generally accepted procedures for demeriting the correct weighting structure to use for \textit{W}, I apply the two most commonly used weighting schemes of row standardization of the neighbor matrix, and a weight that declines with distance where the weight of each neighboring observation is weighted by the inverse of distance $W_{ij} = 1/d_{ij}$, where \textit{d} is the distance between observations in miles, which is also then row standardized so that each row sums to unity.  The bandwidth used to create the neighbor matrix was the minimum distance necessary so that each observation included at least one neighbor, 1.076 miles. While it is possible to estimate spatial models with some observations having no neighbors, in practice this also causes far more problems than the benefits of having more restrictive definitions of spatial neighbors.  I estimate the SAR and SEM models using each spatial weight matrix and compare the results below.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Estimation}
+The SAR and SEM have been estimated in the past using maximum likelihood techniques, as well as more recently with Bayesian techniques.  The estimation of the model using Bayesian techniques has some advantages over maximum likelihood, the most important being the posterior distributions of draws which can be used for inference \citep{LeSage2000}.  
+
+The SAR and SEM models are estimated with a Bayesian model that takes 1,000 draws with a burn-in of 100 draws.  Model results are listed in \autoref{spatialmodels1}.  All estimations are implemented in the software system R \citep{RCoreTeam2014}.  The spatial weights matrix was constructed and standardized using the R add-on package \textit{spded} \citep{Bivand2013m,Bivand2015}.%  The spatial SAR and SEM models are estimated using both the maximum likelihood approach implemented in the R package \textit{McSpatial} \citep{Mcmillen2013} and the Bayesian approach implemented in the R package \textit{spatialprobit} \citep{Wilhelm2014}.%
+The spatial probit SAR, SEM, and SDM models are estimated using the Bayesian approach implemented in the R package \textit{spatialprobit} \citep{Wilhelm2014}.%
+
+\begin{singlespace}\tiny
+\input{tables/spatialmodels1}
+\end{singlespace}
+
+The model results for both the SAR and SEM models using both a row standardized and inverse distance row standardized spatial weights matrix show that there is spatial dependence, with the inverse distance weight matrix spatial parameters $\rho$ and $\lambda$ significant at the 1 percent level in both the SAR and SEM models, and the row standardized matrix spatial parameters significant at the 5 percent level in both the SAR and SEM models.  
+
+The higher coefficient on $\rho$ in the SAR model using inverse distance spatial weighting is likely the result of distance decay already being present in the weighting structure, whereas the lower parameter estimate of $\rho$ in the row standardized model indicate a faster decay of spatial dependence, but with all neighbors within approximately one mile of each observation being weighted the same.  It may be the case that both models indicate a similar rate of spatial dependence decay.  The most notable result of the SAR models is that the coefficients on all three residential zoning density levels are negative and highly significant.  This indicates that higher levels of residential zoning of any type decrease the likelihood of using non-auto transportation.  Coupled with the highly significant spatial parameter, this implies that not only will reducing the percentage of residential zoning surrounding a household increase the likelihood of non-auto travel behavior, but that it will also exhibit a feedback loop in surrounding regions, causing more non-auto travel behavior in nearby neighborhoods.  The other result that indicates potential for zoning behavior impacts is the significant positive coefficients in the one half to one mile band surrounding respondents' residences.  This indicates that increased business within this zoning band increases the likelihood of using auto transportation.  Coupled with the findings on the coefficients on the closest band to residential location, this implies that business zoning within one mile but more than a half mile leads to more respondents choosing the auto.  This indicates that residential locations surrounded by a band of residential zoning up to one half mile may prefer to drive to shopping, employment, and recreation, and that zoning that precludes much closer businesses my lead to more non-auto travel behavior.
+
+The spatial coefficients in  the SEM model are also highly significant, indicating the likelihood of spatial heterogeneity among survey respondents that are spatially close.  This indicates that coefficients on explanatory variables are heterogeneous,  and that controlling for this dependence in the error structure of the SEM models is warranted.  The coefficients on the SEM model have similar values to those found in the SAR model, with similar implications.   
+
+While the sign of the coefficients on the explanatory variables indicate the direction of effect on the conditional probability of non-auto transportation behavior, their magnitude cannot be interpreted the same as in OLS or probit models.  Due to not non-linearity of the model, and the presence of both spatial dependence and heterogeneity, the impact on a change of one explanatory variable  has a spatial feedback loop effect on the dependent variable due to the presence of the spatially lagged dependent variable in the estimated equation.  Therefore, it is necessary to estimate marginal effects of the change in each variable in the model to determine the direct, indirect, and total effects a change in a variable my have. The full list of direct, indirect, and total effects of the change in each independent variable are listed in \autoref{app: A}.
+
+While the SAR and SEM models both show significance in some of the zoning variables in determining mode choice, the SDM only shows significance in the low, medium, and high residential zoning types for the binary spatial weights matrix, and no significance in any of the zoning variables for the inverse distance weighted spatial weights matrix.      
+\begin{singlespace}\footnotesize
+	\label{table:spatialdurbinmodels} 
+	\input{tables/spatialdurbinmodels}
+\end{singlespace} 	
+
+The log likelihood test of all of the models in this chapter indicate that the Spatial Durban Model using the inverse distance spatial weights matrix is the best fit to the existing data.  However, the SAR with binary spatial weights matrix is indicated as the best model using both Akaike Information Criteria (AIC) and Bayesian Information Criteria (BIC).  A summary of the log likelihood, AIC, and BIC of each of the models tested in this chapter is shown in  \autoref{testspatial}.%
+\begin{singlespace}
+	\input{tables/testspatial}
+\end{singlespace}%
+Theoretically, modeling spatial neighbors as having an impact that declines with distance makes the most intuitive interpretation of the results.  However, the lack of significance of the zoning variables in the spatial Durban model with an inverse distance spatial weights matrix calls into question the validity of the zoning variables that are significant in the spatial Durban model using binary weights and the previous SAR and SEM models.   It may be the case that the zoning variables are highly correlated with other variables that are a result of zoning restrictions, and therefore the effect of zoning restrictions are subsumed in these other variables that are the result of long standing zoning laws at the local level.  Comparing the use of the two spatial weights matrices in each model, the binary row standardized spatial weights matrix leads to a better posterior distribution fit to the data, indicating that the binary matrix is preferred to the inverse distance matrix.  This indicates that the spatial effects may be strong within the distance used to specify spatial neighbors, just over one mile.
+
+\subsection{(Marginal Effects and Elasticities)}
+
+The Bayesian Markov Chain Monte Carlo (MCMC) estimation technique used to estimate the models above produces samples of the posterior distribution of the model parameters.  These sample distributions of coefficients in can be used to compute average marginal  effects across observations of a change in an independent variable of the model on the probability  of the independent variable, non-auto travel mode choice \citep{LeSage2009}.  While the SEM model coefficients can be interpreted as marginal effects as in ordinary least squares because the spatial variation is only present in the error term, for the SAR and SDM models which include spatially lagged dependent or independent variables, the impacts of a change in an explanatory variable can have an impact on all other neighboring dependent variables, creating a feedback loop with several orders of magnitude.  Thus, spatial models exhibit direct, indirect, and total impacts.  \cite{LeSage2009} proposes summary measures of the marginal effects of a change in an explanatory variable $x_r$ by using the average change in the expected value of the dependent variable $y_i$ and changing the multiplier matrix $S_r(W)$ based on the spatial model.  The expected value of of a change is listed in \autoref{eq:expectedy}, where $X$ is an $n x p$ matrix of $n$ observations and $p$ explanatory variables.
+
+\begin{equation}
+\label{eq:expectedy}
+E(y) = \sum_{r=1}^{p} S_r(W) x_r + \alpha I
+\end{equation}
+
+$S_r(W)$ for the SAR and SDM model are given in \autoref{eq:sarsrw} and \autoref{eq:sdmsrw}.  The diagonal elements of the trace of the $S_r(W)$ matrix multiplied by the change in independent variable $x_{ir}$ give the direct impacts (\autoref{eq:dfx}), while the trace of the entire $S_r(W)$ matrix multiplied by the change in independent variable $x_{ir}$ gives the total impacts (\autoref{eq:tfx}).  Indirect impacts are the difference between direct and total impacts (\autoref{eq:ifx}).  Marginal direct effects for individual observations are contained in the diagonal elements of $S_r(W)$ (\autoref{eq:xir}) and indirect marginal effects are contained in the off diagonal elements of $S_r(W)$ (\autoref{eq:xjr}).\citep{LeSage2009}
+%
+\begin{flalign}
+S_r(W) &= (I_n - \rho W)^{-1} \beta_r \label{eq:sarsrw}\\
+S_r(W) &= (I_n - \rho W)^{-1} (I_n \beta_r + W \theta_r) \label{eq:sdmsrw}\\
+\bar{M}(r)_{direct} &= n^{-1} tr (S_r(W)) \label{eq:dfx}\\
+\bar{M}(r)_{total} &= n^{-1} I_n' S_r(W) I_n \label{eq:tfx}\\
+\bar{M}(r)_{indirect} &= \bar{M}(r)_{total} - \bar{M}(r)_{direct} \label{eq:ifx}\\
+\frac{\partial y_i}{\partial x_{ir}} &= S_r(W)_{ii} \label{eq:xir}\\
+\frac{\partial y_i}{\partial x_{jr}} &= S_r(W)_{ij} \label{eq:xjr}
+\end{flalign}
+%
+To calculate the elasticities, the change of each variable is taken at the mean of the posterior distribution and the mean of the expected probability of the binary dependent variable, which is 16.63\%.  Marginal effects are reported for the direct, indirect, and total marginal effects of a change in each independent variable. Direct effects are the change in the probability of observing non-auto mode choice attributed to the change in the independent variable.  Indirect effects represent the spatially lagged effect on the autocorrelated dependent variable of a change in one of the independent variables after the feedback loop from a change in an independent variable has affected the spatially lagged dependent variable of spatial neighbor observations.  The sum of direct and indirect effects equals the total effect of a change in the independent variables after the feedback loop of the change has run its course.  Dummy variable elasticities are not reported.  For comparison purposes, results for the SAR and SDM model are reported for the binary spatial weights matrix, with the remaining models marginal effects relegated to \autoref{app: A}. Marginal effects for the SAR model using a binary spatial weights matrix is listed in \autoref{sar_mfx_reg_w}, and the corresponding elasticities in \autoref{sar_elasticities}.  Marginal effects for the SDM model using a binary spatial weights matrix is listed in \autoref{sdm_mfx_reg_w}, and the corresponding elasticities in \autoref{elasticities}.  Significance at the 1, 5, and 10 percent level are indicated by ***, **, and *, respectively.
+
+
+\begin{singlespace}
+	\input{tables/sar_mfx_reg_w}
+\end{singlespace}
+Several of the significant variables in the SAR model have small marginal effects of the expected sign.  In particular, increasing the number of household vehicles has a marginal effect of 7.138 \%
+\begin{singlespace}
+	\input{tables/sar_elasticities}
+\end{singlespace}
+\begin{singlespace}
+	\input{tables/sdm_mfx_reg_w}
+\end{singlespace}
+\begin{singlespace}
+	\input{tables/elasticities}
+\end{singlespace}
+
+
+Elasticities of residential zoning variables are negative but very small, indicating that the response to residential zoning is highly inelastic. Although the marginal effects are non-linear, in general most of the estimates follow normal distributions.  Thus, when considering that the marginal effects are capturing a one percent increase in a specific zoning type, it may be more appropriate to consider that, for example a ten percent increase in a zoning type would have roughly ten times the impact on the probability of non-auto transportation modes being chosen.   For example, if residential low density zoning was increase by ten percent within a quarter mile of a survey respondents residence, using this rough measure we would expect to see a 1.94\% decrease in non-auto transportation mode choices.  While still a small impact, this change is not insignificant when considering the magnitude of trips away from home taken by city residents across the United States each year.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+
+The evidence provided by the log likelihood test indicate that the Bayesian models of the impact of zoning on travel mode preference favor the Spatial Durban Model with a inverse distance spatial weights matrix indicated in \autoref{table:spatialdurbinmodels}.   While none of the zoning variables which are the primary focus of this study are significant, all other models show at least some significances of the zoning variables of interest in this study.   Using both AIC and BIC to asses the models considered in this chapter, the SAR model with a spatial binary weights matrix was the best model overall.  In this model, residential zoning variables of low, medium, and high density all have significant and negative impacts on survey respondents probability of choosing non-auto transportation.  One possible conclusion from these results is that zoning variables may in fact have a significant influence on travel preference, but that zoning variables may manifest themselves in other built environment variables in the model and therefore warrant further study, as zoning laws and the resulting manifestation of the built environment are determined and implemented by a political process.  While the impacts represented by the marginal effects of zoning variables are small when considering minute increases in zoning types surrounding residential locations, more drastic changes to zoning mixes may have a more profound impact.  Automobile usage was the dominant mode of transportation across respondents in this study, as well as the United States in general.  Part of the dominance of the automobile in the transportation of citizens in the United States may very well be a long term path dependence that has resulted from an early preference for auto transportation that led to a long chain of city planning decisions that have shaped the built environment to accommodate automobile transportation to the detriment of alternative modes of transportation that use less energy and decrease congestion.  Further research will be needed to determine if drastic changes in built environment design that focus on alternative to automobile transportation can change society's preference for the automobile towards more a transportation usage that is more environmentally and culturally sustainable for the long-term future.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Appendix A
+%
+\appendix
+%\begin{appendices}
+\chapter{} \label{app: A}
+\begin{singlespace}
+	\input{tables/sar_direct_reg_w}
+\end{singlespace}
+
+\begin{singlespace}
+	\input{tables/sar_indirect_reg_w}
+\end{singlespace}
+
+\begin{singlespace} 
+	\input{tables/sar_total_reg_w}
+\end{singlespace}
+
+\begin{singlespace} 
+	\input{tables/sar_direct_inv_miles_w}
+\end{singlespace}
+
+\begin{singlespace} 
+	\input{tables/sar_indirect_inv_miles_w}
+\end{singlespace}
+
+\begin{singlespace}
+	\input{tables/sar_total_inv_miles_w}
+\end{singlespace}
+
+\begin{singlespace}
+	\input{tables/sdm_impacts_direct}
+\end{singlespace}
+
+\begin{singlespace}
+	\input{tables/sdm_impacts_indirect}
+\end{singlespace}
+
+\begin{singlespace}
+	\input{tables/sdm_impacts_total}
+\end{singlespace}
+
+\begin{singlespace}
+	\input{tables/sdm_impacts_direct_inv_w}
+\end{singlespace}
+
+\begin{singlespace}
+	\input{tables/sdm_impacts_indirect_inv_w}
+\end{singlespace}
+
+\begin{singlespace}
+	\input{tables/sdm_impacts_total_inv_w}
+\end{singlespace}
+%\end{appendices}

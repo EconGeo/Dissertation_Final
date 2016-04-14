@@ -17,3 +17,12 @@ vignettes/*.pdf
 
 # OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
 .httr-oauth
+.Rproj.user
+
+/LaTeX/*.aux
+/LaTeX/*.bbl
+/LaTeX/*.blg
+/LaTeX/*.log
+/LaTeX/*.out
+/LaTeX/*.gz
+/LaTeX/bibtex/*

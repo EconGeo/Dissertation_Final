@@ -1,0 +1,29 @@
+% Requires LaTeX packages: dcolumn 
+%{@{\extracolsep{5pt}}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+	\begin{tabu} to \linewidth {l*{5}{d{-2}}} % {lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
+		\\[-1.8ex]\hline 
+		\hline \\[-1.8ex] 
+		Statistic & \multicolumn{1}{c}{Households} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\ 
+		\hline \\[-1.8ex] 
+	Residential Low Density, 0-1/4 mile & 2,096 & 60.1 & 37.4 & 0.0 & 100.0 \\ 
+	Residential Medium Density, 0-1/4 mile & 2,096 & 10.0 & 18.9 & 0.0 & 100.0 \\ 
+	Residential High Density 0-1/4 mile & 2,096 & 13.9 & 24.0 & 0.0 & 100.0 \\ 
+	Business Low Density 0-1/4 mile & 2,096 & 2.1 & 3.9 & 0.0 & 29.6 \\ 
+	Business High Density 0-1/4 mile & 2,096 & 8.8 & 18.3 & 0.0 & 100.0 \\ 
+	Industrial 0-1/4 mile & 2,096 & 1.9 & 8.4 & 0.0 & 73.7 \\ \hline \\[-1.8ex]
+	Residential Low Density, 1/4-1/2 mile & 2,096 & 57.2 & 30.9 & 0.0 & 100.0 \\ 
+	Residential Medium Density, 1/4-1/2 mile & 2,096 & 11.0 & 15.2 & 0.0 & 98.1 \\ 
+	Residential High Density 1/4-1/2 mile & 2,096 & 12.9 & 16.8 & 0.0 & 76.6 \\ 
+	Business Low Density 1/4-1/2 mile & 2,096 & 2.0 & 2.3 & 0.0 & 14.6 \\ 
+	Business High Density 1/4-1/2 mile & 2,096 & 10.3 & 14.3 & 0.0 & 100.0 \\ 
+	Industrial 1/4-1/2 mile & 2,096 & 3.4 & 9.8 & 0.0 & 76.2 \\ \hline \\[-1.8ex]
+	Residential Low Density, 1/2-1 mile & 2,096 & 54.1 & 24.6 & 0.0 & 99.7 \\ 
+	Residential Medium Density, 1/2-1 mile & 2,096 & 12.5 & 14.4 & 0.0 & 98.9 \\ 
+	Residential High Density 1/2-1 mile & 2,096 & 11.9 & 11.2 & 0.0 & 86.6 \\ 
+	Business Low Density 1/2-1 mile & 2,096 & 1.9 & 1.5 & 0.0 & 7.6 \\ 
+	Business High Density 1/2-1 mile & 2,096 & 10.3 & 10.6 & 0.0 & 76.5 \\ 
+	Industrial 1/2-1 mile & 2,096 & 5.9 & 11.0 & 0.0 & 96.1 \\ 
+	\hline \\[-1.8ex] 
+	\end{tabu} 
+
